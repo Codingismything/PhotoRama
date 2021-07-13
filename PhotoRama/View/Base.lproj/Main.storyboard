@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Con-oX-ada">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PhotoRama-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PhotosViewController" customModule="PhotoRama" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="11V-dT-JhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="keD-NY-WUV">
+                            <size key="itemSize" width="90" height="90"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="wvw-wi-2Z1" customClass="PhotoCollectionViewCell" customModule="PhotoRama" customModuleProvider="target">
+                                <rect key="frame" x="2" y="2" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9BA-RE-9FQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfa-IN-gr7">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Yey-DT-bDB">
+                                            <rect key="frame" x="35" y="35" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vfa-IN-gr7" firstAttribute="leading" secondItem="9BA-RE-9FQ" secondAttribute="leading" id="LDM-TF-hoA"/>
+                                        <constraint firstAttribute="trailing" secondItem="vfa-IN-gr7" secondAttribute="trailing" id="RTn-1R-X85"/>
+                                        <constraint firstAttribute="bottom" secondItem="vfa-IN-gr7" secondAttribute="bottom" id="uYg-ND-wfu"/>
+                                        <constraint firstItem="vfa-IN-gr7" firstAttribute="top" secondItem="9BA-RE-9FQ" secondAttribute="top" id="xqy-jZ-QgN"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="imageView" destination="vfa-IN-gr7" id="aVJ-5w-u1Z"/>
+                                    <outlet property="spinner" destination="Yey-DT-bDB" id="tlg-ep-evc"/>
+                                    <segue destination="gxy-CG-nAt" kind="show" identifier="showPhoto" id="CV1-Zm-vMg"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="PhotoRama" id="6fl-xV-1pd"/>
+                    <connections>
+                        <outlet property="collectionView" destination="11V-dT-JhZ" id="LHl-iE-LL6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013.0434782608696" y="88.392857142857139"/>
+        </scene>
+        <!--Photo Info View Controller-->
+        <scene sceneID="zYz-K7-o0l">
+            <objects>
+                <viewController id="gxy-CG-nAt" customClass="PhotoInfoViewController" customModule="PhotoRama" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="etb-sJ-cZ6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bR1-CW-Big">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M4E-KG-9E8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M4E-KG-9E8" firstAttribute="trailing" secondItem="bR1-CW-Big" secondAttribute="trailing" id="8Rz-jR-ZWV"/>
+                            <constraint firstItem="bR1-CW-Big" firstAttribute="top" secondItem="M4E-KG-9E8" secondAttribute="top" id="AfV-hV-7uW"/>
+                            <constraint firstItem="bR1-CW-Big" firstAttribute="leading" secondItem="M4E-KG-9E8" secondAttribute="leading" id="jFO-nn-puB"/>
+                            <constraint firstItem="M4E-KG-9E8" firstAttribute="bottom" secondItem="bR1-CW-Big" secondAttribute="bottom" id="qAE-zK-Zi6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FmH-eQ-oO3"/>
+                    <connections>
+                        <outlet property="imageView" destination="bR1-CW-Big" id="cv6-eH-9WC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpd-8y-emv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="89"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tAO-N4-wlM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Con-oX-ada" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xht-4x-9oL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2xv-Hh-mRz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Abd-6t-WB6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
